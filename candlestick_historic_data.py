@@ -5,9 +5,9 @@ import pandas as pd
 import csv
 #create object of call
 try:
-    obj=SmartConnect(api_key="SfYPpk6k")
+    obj=SmartConnect(api_key="")
     #login api call
-    data = obj.generateSession("PTAJ1165","hpcr19071624")
+    data = obj.generateSession("","")
     refreshToken= data['data']['refreshToken']
     #fetch the feedtoken
     feedToken=obj.getfeedToken()
@@ -35,7 +35,7 @@ except Exception as e:
     print("Historic Api failed: {}".format(e.message))
     
 try:
-    logout=obj.terminateSession('PTAJ1165')
+    logout=obj.terminateSession('')
     print("Logout Successfull")
 except Exception as e:
     print("Logout failed: {}".format(e.message))    
